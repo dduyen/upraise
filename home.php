@@ -14,7 +14,12 @@
 
 <body>
     <?php 
+        
         include "./header.php";
+        
+        include "./connect.php";
+        
+       
     ?>
     <!-- <div id="top">
         <div class="container">
@@ -141,11 +146,25 @@
         <div class="row">
             <div class="col-lg-4 col-sm-12 border">
                 <h5 style="padding:2%; border-radius:10px; " class="border bg-secondary text-light">WHAT'S NEW  更新情報</h5>
-                <div class="border-bottom"> <p class="bx-font-size">2020年10月12日</p> <a href="#" >10月12日　物流ウィークリー記事掲載　アプライズがベトナム人留学生をサポート</a> </div>
-                <div class="border-bottom"> <p class="bx-font-size">2020年10月12日</p> <a href="#" >10月12日　物流ウィークリー記事掲載　アプライズがベトナム人留学生をサポート</a> </div>
-                <div class="border-bottom"> <p class="bx-font-size">2020年10月12日</p> <a href="#">10月12日　物流ウィークリー記事掲載　アプライズがベトナム人留学生をサポート</a> </div>
-                <div class="border-bottom"> <p class="bx-font-size">2020年10月12日</p> <a href="#" >10月12日　物流ウィークリー記事掲載　アプライズがベトナム人留学生をサポート</a> </div>
-                <div class="border-bottom"> <p class="bx-font-size">2020年10月12日</p> <a href="#" >10月12日　物流ウィークリー記事掲載　アプライズがベトナム人留学生をサポート</a> </div>
+                <?php
+                $sql = "SELECT * FROM news  LIMIT 5";
+                //Execute the Query
+                $res = mysqli_query($conn, $sql);
+                //Count rows to check whether the category is available or not
+                $count = mysqli_num_rows($res);
+
+                if ($count >0){
+                        while($row = mysqli_fetch_assoc($res)){ 
+                            ?>
+                            <div class="border-bottom"> <p class="bx-font-size"><?php echo $row['date_upload']; ?></p> <a href="<?php echo $row['link']?>" ><?php echo $row['title']; ?></a> </div>
+                        <?php
+                        }
+                    }
+                    else{
+                        echo "co csdl";
+                    }
+                ?>
+               
                 <div class="border-0" style="margin:5%;background-color:#DEE1E3; padding:1%;border-radius:5px;"><a href="./news.php" class="text-decoration-none text-reset"><i class="fa fa-arrow-right" aria-hidden="true"></i>ニュース一覧を見る</a></div>
                 <div class="color"> 
                     <a class="text-decoration-none  text-warning" href="#">

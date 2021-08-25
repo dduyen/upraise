@@ -1,184 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <style>
-        body {
-    color: #000;
-    overflow-x: hidden;
-    height: 100%;
-    background-color: #B0BEC5;
-    background-repeat: no-repeat
-}
-
-.card0 {
-    box-shadow: 0px 4px 8px 0px #757575;
-    border-radius: 0px
-}
-
-.card2 {
-    margin: 0px 40px
-}
-
-.logo {
-    width: 200px;
-    height: 100px;
-    margin-top: 20px;
-    margin-left: 35px
-}
-
-.image {
-    width: 360px;
-    height: 280px
-}
-
-.border-line {
-    border-right: 1px solid #EEEEEE
-}
-
-.facebook {
-    background-color: #3b5998;
-    color: #fff;
-    font-size: 18px;
-    padding-top: 5px;
-    border-radius: 50%;
-    width: 35px;
-    height: 35px;
-    cursor: pointer
-}
-
-.twitter {
-    background-color: #1DA1F2;
-    color: #fff;
-    font-size: 18px;
-    padding-top: 5px;
-    border-radius: 50%;
-    width: 35px;
-    height: 35px;
-    cursor: pointer
-}
-
-.linkedin {
-    background-color: #2867B2;
-    color: #fff;
-    font-size: 18px;
-    padding-top: 5px;
-    border-radius: 50%;
-    width: 35px;
-    height: 35px;
-    cursor: pointer
-}
-
-.line {
-    height: 1px;
-    width: 45%;
-    background-color: #E0E0E0;
-    margin-top: 10px
-}
-
-.or {
-    width: 10%;
-    font-weight: bold
-}
-
-.text-sm {
-    font-size: 14px !important
-}
-
-::placeholder {
-    color: #BDBDBD;
-    opacity: 1;
-    font-weight: 300
-}
-
-:-ms-input-placeholder {
-    color: #BDBDBD;
-    font-weight: 300
-}
-
-::-ms-input-placeholder {
-    color: #BDBDBD;
-    font-weight: 300
-}
-
-input,
-textarea {
-    padding: 10px 12px 10px 12px;
-    border: 1px solid lightgrey;
-    border-radius: 2px;
-    margin-bottom: 5px;
-    margin-top: 2px;
-    width: 100%;
-    box-sizing: border-box;
-    color: #2C3E50;
-    font-size: 14px;
-    letter-spacing: 1px
-}
-
-input:focus,
-textarea:focus {
-    -moz-box-shadow: none !important;
-    -webkit-box-shadow: none !important;
-    box-shadow: none !important;
-    border: 1px solid #304FFE;
-    outline-width: 0
-}
-
-button:focus {
-    -moz-box-shadow: none !important;
-    -webkit-box-shadow: none !important;
-    box-shadow: none !important;
-    outline-width: 0
-}
-
-a {
-    color: inherit;
-    cursor: pointer
-}
-
-.btn-blue {
-    background-color: #1A237E;
-    width: 150px;
-    color: #fff;
-    border-radius: 2px
-}
-
-.btn-blue:hover {
-    background-color: #000;
-    cursor: pointer
-}
-
-.bg-blue {
-    color: #fff;
-    background-color: #1A237E
-}
-
-@media screen and (max-width: 991px) {
-    .logo {
-        margin-left: 0px
-    }
-
-    .image {
-        width: 300px;
-        height: 220px
-    }
-
-    .border-line {
-        border-right: none
-    }
-
-    .card2 {
-        border-top: 1px solid #EEEEEE !important;
-        margin: 0px 15px
-    }
-}
-    </style>
-</head>
+    <link rel="stylesheet" href="../css/login.css">
 <body>
 <div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
     <div class="card card0 border-0">
@@ -186,7 +10,7 @@ a {
             <div class="col-lg-6">
                 <div class="card1 pb-5">
                     <div class="row"> <img src="../imgs/i_logo.png" class="logo"> </div>
-                    <div class="row px-3 justify-content-center mt-4 mb-5 border-line"> <img src="https://i.imgur.com/uNGdWHi.png" class="image"> </div>
+                    <div class="row px-3 justify-content-center mt-4 mb-5 border-line"> <img style="width:80%;" src="../imgs/tải xuống.jfif" class="image"> </div>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -194,21 +18,28 @@ a {
                     
                     </div>
                     <div class="row px-3 mb-4">
-                        <div class="line"></div> <small class="or text-center">Login</small>
+                        <div class="line"></div> <small class="or text-center h6">Login</small>
                         <div class="line"></div>
                     </div>
-                    <div class="row px-3"> <label class="mb-1">
-                            <h6 class="mb-0 text-sm">Email Address</h6>
-                        </label> <input class="mb-4" type="text" name="email" placeholder="Enter a valid email address"> </div>
-                    <div class="row px-3"> <label class="mb-1">
-                            <h6 class="mb-0 text-sm">Password</h6>
-                        </label> <input type="password" name="password" placeholder="Enter password"> </div>
-                    <div class="row px-3 mb-4">
+                    <form method="POST">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label> <br>
+                            <input name="email" type="email" class="col-8" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label> <br>
+                            <input name="password" type="password" class="col-8" id="exampleInputPassword1">
+                        </div>
+                        
+                        <div class="row px-3 mb-4">
                         <div class="custom-control custom-checkbox custom-control-inline"> <input id="chk1" type="checkbox" name="chk" class="custom-control-input"> <label for="chk1" class="custom-control-label text-sm">Remember me</label> </div> <a href="#" class="ml-auto mb-0 text-sm">Forgot Password?</a>
                     </div>
-                    <div class="row mb-3 px-3"> <button type="submit" class="btn btn-blue text-center">Login</button> </div>
-                    
+                    <div class="row mb-3 px-3"> <button name="submit" type="submit" class="btn btn-blue text-center">Login</button> </div>
+                    </form>
                 </div>
+                    
+                   
             </div>
         </div>
         <div class="bg-blue py-4">
@@ -222,3 +53,19 @@ a {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 </body>
 </html>
+<?php
+    include("../connect.php"); 
+    session_start();
+    if(isset($_POST['submit'])){
+        $email= $_POST['email'];
+        $pass_word = $_POST['password'];
+        $sql = "SELECT * FROM admin WHERE email='$email' AND pass_word='$pass_word'";
+        $res = mysqli_query($conn, $sql);
+        $count = mysqli_num_rows($res);
+        if ($count == 1){
+            header('Location:http://localhost/upraise/admin/news.php');
+        }
+        else{
+        }
+    } 
+    // phpinfo();
