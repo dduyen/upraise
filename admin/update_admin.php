@@ -36,15 +36,15 @@
         if($count==1)
         {
             $row=mysqli_fetch_assoc($res);
-            $fullname = $row['fullname'];
+            $full_name = $row['full_name'];
             $email = $row['email'];
             $pass_word = $row['pass_word'];
              ?>
           
                 <form class="container" method="POST">
                     <div class="form-group">
-                        <label for="fullname">Fullname</label>
-                        <input type="text"class="form-control" name="fullname" value= "<?php echo $fullname; ?>"  >
+                        <label for="full_name">Fullname</label>
+                        <input type="text"class="form-control" name="full_name" value= "<?php echo $full_name; ?>"  >
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
@@ -64,29 +64,27 @@
         }
     }
     }
-if(isset($_POST['btnUpdate']))
-{
-    $fullname = $_POST['fullname'];
-    $email =  $_POST['email'];
-    $pass_word = $_POST['pass_word'];
-    $sql = "  UPDATE admin SET 
-    fullname = '$fullname',
-    email = '$email',
-    pass_word = '$pass_word',
-    WHERE id='$id'
-    ";
-    $res = mysqli_query($conn, $sql) ;
-    if($res == TRUE)
-    { 
-        header('location:'.SITEURL.'admin/admin.php');
-    }
-    else{
-        echo"error";
-    }
-}
-        
+    if(isset($_POST['btnUpdate']))
+    {
+        $full_name = $_POST['full_name'];
+        $pass_word = $_POST['pass_word'];
+        $sql = "  UPDATE admin SET 
+        full_name = '$full_name',
+        pass_word = '$pass_word'
+        WHERE id='$id'
+        ";
+        $res = mysqli_query($conn, $sql) ;
+        if($res == TRUE)
+        { 
+            header('location:'.SITEURL.'admin/admin.php');
+        }
+        else{
+            echo"error";
+        }}
+     
+       ?>      
 
 
 
-                ?>
+
 

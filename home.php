@@ -21,40 +21,7 @@
         
        
     ?>
-    <!-- <div id="top">
-        <div class="container">
-            <div class="row ">
-                <div class="col-md-10 col-sm-12 border-bottom">
-                <i class="fa fa-facebook-square" aria-hidden="true"></i> 日本留学安心情報サイト「アプライズ」は、アジアの将来を担う人材の創出・育成を通じて産業発展に貢献します。
-                </div>
-                <div class="col-md-2 border-bottom">
-                    <a href="https://www.facebook.com/upraise.Ltd/" class="text-success">FACEBOOK 
-                     <i class="fab fa-facebook-square "></i></a>
-                </div>
-            </div>
-        </div>  -->
-                <!-- navbar -->
-            <!-- <div class="container border-bottom"> 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light row ">
-                <div class=" h1 navbar-brand col-2" href="#"><img src="./imgs/i_logo.png" alt="logo"></div>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse container offset-6" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto row "> 
-                        <li class="nav-item active">
-                            <a class="float-right nav-link " href="#"> <i class="fa fa-home" aria-hidden="true"></i>COMPANY<span class="sr-only">(current)</span></a>
-                        </li>
-                            <a class="nav-link" href="#"> <i class="fas fa-mail-bulk "></i> CONTACT<span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item active ">
-                            <a class="nav-link" href="#"> <i class="fa fa-lock" aria-hidden="true"></i>ENTRY<span class="sr-only">(current)</span></a>
-                        </li>
-                    </ul>
-                </div>
-              
-                </nav>
-                </div>    -->
+
         <nav class="navbar navbar-expand-lg navbar-light bg-light container border-bottom">
             <a class="navbar-brand" href="#"><img src="./imgs/i_logo.png" alt=""></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -69,7 +36,7 @@
                         <a class="nav-link text-primary" href="#"> <i class="fas fa-mail-bulk "></i> CONTACT<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active border-left">
-                        <a class="nav-link text-success" href="#"> <i class="fa fa-lock" aria-hidden="true"></i>ENTRY<span class="sr-only">(current)</span></a>
+                        <a class="nav-link text-success" href="./entry.php"> <i class="fa fa-lock" aria-hidden="true"></i>ENTRY<span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
             </div>
@@ -101,30 +68,24 @@
             <div class="  text-danger" >Headline </div>
             <div class=" text-primary">News</div>
         </div>
-        <div class="row d-flex justify-content-between border-top">
-            <div class="col-3">2020年3月1日 </div>
-            <div class="col-9 " > <a  href="#"> アプライズに2000万円の増資、資本金が4,000万円となりました</a></div>
-        </div>
-        <div class="row d-flex justify-content-between border-top">
-            <div class="col-3">2020年3月1日 </div>
-            <div class="col-9 " > <a  href="#"> アプライズに2000万円の増資、資本金が4,000万円となりました</a></div>
-        </div>
-        <div class="row d-flex justify-content-between border-top">
-            <div class="col-3">2020年3月1日 </div>
-            <div class="col-9 " > <a href="#"> アプライズに2000万円の増資、資本金が4,000万円となりました</a></div>
-        </div>
-        <div class="row d-flex justify-content-between border-top">
-            <div class="col-3">2020年3月1日 </div>
-            <div class="col-9 " > <a > アプライズに2000万円の増資、資本金が4,000万円となりました</a></div>
-        </div>
-        <div class="row d-flex justify-content-between border-top">
-            <div class="col-3">2020年3月1日 </div>
-            <div class="col-9 " > <a  href="#"> アプライズに2000万円の増資、資本金が4,000万円となりました</a></div>
-        </div>
-        <div class="row d-flex justify-content-between border-top">
-            <div class="col-3">2020年3月1日 </div>
-            <div class="col-9 " > <a href="#"> アプライズに2000万円の増資、資本金が4,000万円となりました</a></div>
-        </div>
+            <div class="row d-flex justify-content-between border-top" style=" padding-top:10px" >
+                <?php
+                    $sql = "SELECT * FROM news where id_category=0  LIMIT 5";
+                    $res = mysqli_query($conn, $sql);
+                    $count = mysqli_num_rows($res);
+
+                    if ($count >0){
+                            while($row = mysqli_fetch_assoc($res)){ 
+                                ?>
+                                    <div class="col-3"><?php echo $row['date_upload']?> </div>
+                                    <div class="col-9 " > <a  href="#"><?php echo $row['title']?> </a></div>                            <?php
+                            }
+                        }
+                        else{
+                            echo "co csdl";
+                        }
+                ?>
+                </div>
     </div>
     <div id="initiative" class=" h3 d-flex justify-content-center container">
         <div class="  text-danger" >創業期からの </div>
@@ -147,16 +108,15 @@
             <div class="col-lg-4 col-sm-12 border">
                 <h5 style="padding:2%; border-radius:10px; " class="border bg-secondary text-light">WHAT'S NEW  更新情報</h5>
                 <?php
-                $sql = "SELECT * FROM news  LIMIT 5";
+                $sql = "SELECT * FROM news where id_category = 0  LIMIT 0, 5";
                 //Execute the Query
                 $res = mysqli_query($conn, $sql);
-                //Count rows to check whether the category is available or not
                 $count = mysqli_num_rows($res);
 
                 if ($count >0){
                         while($row = mysqli_fetch_assoc($res)){ 
                             ?>
-                            <div class="border-bottom"> <p class="bx-font-size"><?php echo $row['date_upload']; ?></p> <a href="<?php echo $row['link']?>" ><?php echo $row['title']; ?></a> </div>
+                            <div class="border-bottom"> <p class="bx-font-size"><?php echo $row['date_upload']; ?></p> <a href="./news.php" ><?php echo $row['title']; ?></a> </div>
                         <?php
                         }
                     }
@@ -164,28 +124,33 @@
                         echo "co csdl";
                     }
                 ?>
+              
+              <div class="border-0" style="margin:5%;background-color:#DEE1E3; padding:1%;border-radius:5px;"><a href="./news.php" class="text-decoration-none text-reset"><i class="fa fa-arrow-right" aria-hidden="true"></i>ニュース一覧を見る</a></div>
+
+                      
+                  <?php
+                    $sql = "SELECT * FROM news where id_category = 2  LIMIT 0, 4";
+                    //Execute the Query
+                    $res = mysqli_query($conn, $sql);
+                    $count = mysqli_num_rows($res);
+
+                    if ($count >0){
+                            while($row = mysqli_fetch_assoc($res)){ 
+                                ?>
+                                    <div class="color"> 
+                                    <a class="text-decoration-none text-success"  href="<?php echo $row['link'] ?>">
+                                        <span class="font-weight-bold">  <i class="fa fa-chevron-circle-right fa-lg"></i><?php echo $row['title'] ?></span>  <br> <?php echo $row['summary'] ?>
+                                    </a>
+                                    </div>
+                            <?php
+                        }
+                    }
+                    else{
+                        echo "co csdl";
+                    }
+                ?>
                
-                <div class="border-0" style="margin:5%;background-color:#DEE1E3; padding:1%;border-radius:5px;"><a href="./news.php" class="text-decoration-none text-reset"><i class="fa fa-arrow-right" aria-hidden="true"></i>ニュース一覧を見る</a></div>
-                <div class="color"> 
-                    <a class="text-decoration-none  text-warning" href="#">
-                        <span class="font-weight-bold">  <i class="fa fa-chevron-circle-right fa-lg"></i>Dịch vụ tư vấn tuyển dụnng nước ngoài</span>  <br>  Tư vấn phâp lý và tư vấn pháp lý
-                    </a>
-                </div>
-                <div class="color"> 
-                    <a class="text-decoration-none  text-success" href="#">
-                        <span class="font-weight-bold">  <i class="fa fa-chevron-circle-right fa-lg"></i> Dịch vụ tư vấn tuyển dụnng nước ngoài</span>  <br>  Tư vấn phâp lý và tư vấn pháp lý
-                    </a>
-                </div>
-                <div class="color"> 
-                    <a class="text-decoration-none  text-primary" href="#">
-                        <span class="font-weight-bold">   <i class="fa fa-chevron-circle-right fa-lg"></i> Dịch vụ tư vấn tuyển dụnng nước ngoài</span>  <br>  Tư vấn phâp lý và tư vấn pháp lý
-                    </a>
-                </div>
-                <div class="color"> 
-                    <a class="text-decoration-none  text-primary" href="#">
-                        <span class="font-weight-bold">   <i class="fa fa-chevron-circle-right fa-lg"></i>Dịch vụ tư vấn tuyển dụnng nước ngoài</span>  <br>  Tư vấn phâp lý và tư vấn pháp lý
-                    </a>
-                </div>
+               
                 <div  class=" color" style="background-color:#FFA200">
                     <a href="#" class="text-decoration-none"  style="color:white" >   <i class="fa fa-chevron-circle-right fa-lg"></i>  Điều kiện du học sinh</a>
                 </div>
@@ -246,21 +211,9 @@
     <?php 
         include"./footer.php";
     ?>
-    <!-- <div id="footer">
-        <ul style="list-style-type:none" class="d-flex justify-content-center">
-            <li ><a href="#">ホーム</a></li>
-            <li><a href="#">会社概要</a></li>
-            <li><a href="#">お問い合わせ</a></li>
-            <li><a href="#">エントリー</a></li>
-        </ul>
-
-        <h2 class="d-flex justify-content-center"><img src="./imgs/i_footer_logo (1).png" alt="" width="230" height="70" ></h2>
-        <p class="d-flex justify-content-center text-light" style=" margin-bottom:2%;">	&copy; Upraise,Inc. All Rights Reserved.</p>
-    </div>
-    <div id="btnscroll" class="fixed-bottom"> <i  class="fa fa-arrow-up" aria-hidden="true"></i></div> -->
    
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-<script src="./js/script.js"></script>
+<script src="./js/scroll.js"></script>
 </body>
 </html>

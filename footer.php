@@ -18,6 +18,7 @@
         <h2 class="d-flex justify-content-center"><img src="./imgs/i_footer_logo (1).png" alt="" width="230" height="70" ></h2>
         <p class="d-flex justify-content-center text-light" style=" margin-bottom:2%;">	&copy; Upraise,Inc. All Rights Reserved.</p>
     </div>
-    <div id="btnscroll" class="fixed-bottom"> <i  class="fa fa-arrow-up" aria-hidden="true"></i></div>
+    <div id="btnscroll" class="fixed-bottom"> <img src="./imgs/btn_pagetop.png" alt=""></div>
+    <script src="./js/script.js"></script>
 </body>
 </html>

@@ -14,7 +14,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 
-  <div class="h1 d-flex justify-content-center"> Add Article</div>
+  <div class="h1 d-flex justify-content-center"> Add Condition</div>
 </html>
 
 <form class="container" method="POST">
@@ -23,25 +23,10 @@
     <textarea class="form-control" name="title" id="title" rows="2"></textarea>
   </div>
   <div class="form-group">
-    <label for="img">Image Content</label>
-    <textarea class="form-control" name="img" id="img" rows="2"></textarea>
-  </div>
-  <div class="form-group">
     <label for="link">Link</label>
     <textarea class="form-control" name="link"  rows="2"></textarea>
   </div>
-  <div class="form-group">
-    <label for="date_upload">Date</label>
-    <textarea class="form-control" name="date_upload"  rows="2"></textarea>
-  </div>
-  <div class="form-group">
-    <label for="status">Status</label>
-    <textarea class="form-control" name="status" id="status" rows="1"></textarea>
-  </div>
-  <div class="form-group">
-    <label for="summary">Summary</label>
-    <textarea class="form-control" name="summary" id="summary" rows="5"></textarea>
-  </div>
+ 
   <button type="submit" name="btnInsert" class="btn btn-primary">Insert</button>
 </form>
 <?php
@@ -51,24 +36,16 @@
     include"./login_check.php";
     if(isset($_POST['btnInsert'])){
       $title = $_POST['title'];
-      $img_content = $_POST['img'];
       $link = $_POST['link'];
-      $date_upload = $_POST['date_upload'];
-      $status = $_POST['status'];
-      $summary = $_POST['summary'];
-      if($title != '' &&  $img_content!='' &&  $link != '' &&  $date_upload!='' && $status != '' &&  $summary!=''  ){
+      if($title != '' ){
         $sql = "INSERT INTO news set
         title = '$title',
-        img_content = '$img_content',
         link = '$link',
-        date_upload ='$date_upload',
-        status = '$status',
-        summary = '$summary',
-        id_category = '0'
+        id_category = '1'
          ";
         $result = mysqli_query($conn, $sql);
         if($result == true){
-          header('location:'.SITEURL.'admin/news.php');
+          header('location:'.SITEURL.'admin/condition.php');
         }}
       else{
         echo "error " ;

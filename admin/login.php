@@ -21,21 +21,22 @@
                         <div class="line"></div> <small class="or text-center h6">Login</small>
                         <div class="line"></div>
                     </div>
-                    <form method="POST">
+                    
+                    <form method="post">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label> <br>
-                            <input name="email" type="email" class="col-8" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <input name="email" type="email" class="col-8"  aria-describedby="emailHelp">
                             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Password</label> <br>
-                            <input name="password" type="password" class="col-8" id="exampleInputPassword1">
+                            <input name="password" type="password" class="col-8" >
                         </div>
                         
                         <div class="row px-3 mb-4">
                         <div class="custom-control custom-checkbox custom-control-inline"> <input id="chk1" type="checkbox" name="chk" class="custom-control-input"> <label for="chk1" class="custom-control-label text-sm">Remember me</label> </div> <a href="#" class="ml-auto mb-0 text-sm">Forgot Password?</a>
-                    </div>
-                    <div class="row mb-3 px-3"> <button name="submit" type="submit" class="btn btn-blue text-center">Login</button> </div>
+                        </div>
+                        <div class="row mb-3 px-3"> <button name="submit" type="submit" class="btn btn-blue text-center">Login</button> </div>
                     </form>
                 </div>
                     
@@ -55,17 +56,21 @@
 </html>
 <?php
     include("../connect.php"); 
-    session_start();
+   
     if(isset($_POST['submit'])){
         $email= $_POST['email'];
-        $pass_word = $_POST['password'];
+        $pass_word = ($_POST['password']) ;
         $sql = "SELECT * FROM admin WHERE email='$email' AND pass_word='$pass_word'";
         $res = mysqli_query($conn, $sql);
         $count = mysqli_num_rows($res);
-        if ($count == 1){
-            header('Location:http://localhost/upraise/admin/news.php');
+        if ($count == 1){ 
+            $_SESSION['email'] = $email; 
+            $_SESSION['login'] = "<div class='success'>Login Successful.</div>";
+            header('Location:http://localhost/upraise/admin/admin.php');
         }
         else{
+            $_SESSION['login'] = "<div class='error text-center'>LoginUsername or Password did not match.</div>";
+            header('Location:http://localhost/upraise/admin/login.php');
         }
     } 
     // phpinfo();

@@ -1,9 +1,12 @@
 <?php
-      include"./header.php"
+      include"./header.php";
+     
+      session_start();
+
 ?>
 <style>
   #admin{
-    background-color:red
+    background-color:red;
   }
 }
 </style>
@@ -15,9 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>News</title>
   <style>
-      .news{
-        
-      }
+
   </style>
 </head>
 <body>
@@ -31,7 +32,7 @@
       <table class="table table-striped">
       <thead>
             <tr>
-              <th  scope="col">ID</th>
+              
               <th scope="col">Fullname</th>
               <th scope="col">Email</th>
               <th scope="col">Password</th>
@@ -47,8 +48,8 @@
           while($row = mysqli_fetch_assoc($result)){
             ?>
             <tr  style="width:100%; ">
-              <th  scope="row"><?php echo $row['id'] ?></th>
-                  <td ><?php echo $row['fullname'] ?></td>
+             
+                  <td ><?php echo $row['full_name'] ?></td>
                   <td><?php echo $row['email'] ?></td>
                   <td><?php echo $row['pass_word'] ?></td>
                   

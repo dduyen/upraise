@@ -17,44 +17,66 @@
   <div class="h1 d-flex justify-content-center"> Add Admin</div>
 </html>
 
-<form class="container" method="POST">
+<form class="container" method="POST" id="form-2">
   <div class="form-group">
     <label for="fullname">Fullname</label>
-    <input type="text"class="form-control" name="fullname">
+    <input type="text"class="form-control" name="fullname" id="fullname">
+    <p  for="fullname" style="color:red;" class="message"></p>
+    
   </div>
   <div class="form-group">
     <label for="email">Email</label>
     <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp">
+    <p style="color:red;" class="message"></p>
+   
   </div>
   <div class="form-group">
     <label for="link">Password</label>
     <input type="password" class="form-control"  name="pass_word" id="password">
+    <p style="color:red;" class="message"></p>
+   
   </div>
   <button type="submit" name="btnInsert" class="btn btn-primary">Insert</button>
+
 </form>
+
+<!-- <script src="../js/validate.js"></script>
+        <script>
+          Validator({
+              form : '#form-2',
+              errorSelector :'.message',
+              rules : [
+                Validator.isRequired('#fullname'),
+                Validator.isRequired('#email'),
+                Validator.isRequired('#password'),
+              ],
+            })
+</script> -->
+
 <?php
-?>
-<?php
+
+  
     include("../connect.php");
+   
     if(isset($_POST['btnInsert'])){
       $fullname = $_POST['fullname'];
       $email = $_POST['email'];
       $pass_word = $_POST['pass_word'];
       if($fullname != '' &&       $email !='' &&   $pass_word != ''){
         $sql = "INSERT INTO admin set
-        fullname = '$fullname',
+        full_name = '$fullname',
         email = '$email',
         pass_word = '$pass_word'
          ";
         $result = mysqli_query($conn, $sql);
         if($result == true){
+         
           header('location:'.SITEURL.'admin/admin.php');
         }}
-      else{
-        echo "<h1> Vui lòng nhập  đầy đủ dữ liệu</h1> " ;
-      }
+        else{
+       
+     }
      
     }
    
 ?>
-

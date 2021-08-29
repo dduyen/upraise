@@ -22,7 +22,7 @@
   }
 </style>
 <html>
-  <div class="h1 d-flex justify-content-center"> Update Article</div>
+  <div class="h1 d-flex justify-content-center"> Update Condition</div>
 </html>
 <?php
     include("../connect.php");
@@ -38,37 +38,20 @@
         {
             $row=mysqli_fetch_assoc($res);
             $title = $row['title'];
-            $img_content = $row['img_content'];
             $link = $row['link'];
-            $date_upload = $row['date_upload'];
-            $status = $row['status'];
-            $summary = $row['summary']; ?>
+             ?>
           
                 <form class="container" method="POST">
                     <div class="form-group">
                         <label for="title">Title</label>
                         <textarea class="form-control" name="title"  rows="2"><?php echo $title; ?></textarea>
                     </div>
-                    <div class="form-group">
-                        <label for="title">Image Content</label>
-                        <textarea class="form-control" name="image_content"  value="" rows="2"><?php echo $img_content; ?></textarea>
-                    </div>
+                    
                     <div class="form-group">
                         <label for="link">Link</label>
                         <textarea class="form-control" name="link"   value="" rows="2"><?php echo $link; ?></textarea>
                     </div>
-                    <div class="form-group">
-                        <label for="date">Date</label>
-                        <textarea class="form-control" name="date_upload"  value=""  rows="2"><?php echo $date_upload;  ?></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="status">Status</label>
-                        <textarea class="form-control" name="status"  value="" id="status" rows="1"><?php echo $status;  ?> </textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="summary">Summary</label>
-                        <textarea class="form-control" name="summary"  value="" id="summary" rows="5"><?php echo $summary; ?></textarea>
-                    </div>
+                   
                     <button type="submit" name="btnUpdate" class="btn btn-primary">Update</button>
                 </form>
                 <?php 
@@ -82,31 +65,22 @@
 if(isset($_POST['btnUpdate']))
 {
     $title = $_POST['title'];
-    $img_content =  $_POST['image_content'];
     $link = $_POST['link'];
-    $date_upload =  $_POST['date_upload'];
-    $status =  $_POST['status'];
-    $summary =  $_POST['summary'];
+
     $sql = "  UPDATE news SET 
     title = '$title',
-    img_content = '$img_content',
     link = '$link',
-    date_upload ='$date_upload',
-    status = '$status',
-    summary = '$summary'
+    id_category = '1'
     WHERE id='$id'
     ";
     $res = mysqli_query($conn, $sql) ;
     if($res == TRUE)
     { 
-        header('location:'.SITEURL.'admin/news.php');
+        header('location:'.SITEURL.'admin/condition.php');
     }
     else{
         echo"error";
     }}
-        
-
-
-
-                ?>
+ 
+   ?>
 

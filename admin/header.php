@@ -31,7 +31,7 @@
             <form class="form-inline ">
                 <a class="navbar-brand mx-5 bg-white  href="#"> <img src="../imgs/i_logo.png"  width="210" height="100"  alt=""></a>
                 <h6 class="  text-white  ">日本留学安心情報サイト「アプライズ」は、アジアの将来を担う人材の創出・育成を通じて産業発展に貢献します。</h6>
-
+                <button class="btn-danger" style="margin-left:20%"><a href="./logout.php">Logout</a></button>
             </form>
         </div>
 
@@ -40,26 +40,17 @@
     <div  class="container .bg-secondary hidden" style="margin-bottom:10%; margin-top:10%;">
         <div class="row">
         <button  class="btn btn-secondary" id="admin" ><a href="./admin.php"> Admin</a></button>
-            <div class="dropdown col-1">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    User
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </div>
-            <button  class="btn btn-secondary" id="news" ><a href="./news.php"> News</a></button>
+        <button  class="btn btn-secondary" id="user" ><a href="./register_study.php"> User</a></button>
+            <!-- <button  class="btn btn-secondary" id="news" ><a href="./news.php"> News</a></button> -->
            
-            <div class="dropdown col-1">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Logout
+            <div class="dropdown col-1"  class="btn btn-secondary" id="news" >
+                <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    News
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <a class="dropdown-item" href="./news.php#">News</a>
+                    <a class="dropdown-item" href="./condition.php">Condition</a>
+                    <a class="dropdown-item" href="#">Admission</a>
                 </div>
             </div>
         </div>
