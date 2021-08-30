@@ -29,7 +29,7 @@
     <div class="container-fluid">
         <div class=" bg-secondary ">
             <form class="form-inline ">
-                <a class="navbar-brand mx-5 bg-white  href="#"> <img src="../imgs/i_logo.png"  width="210" height="100"  alt=""></a>
+                <a class="navbar-brand mx-5 bg-white"  href="#"> <img src="../imgs/i_logo.png"  width="210" height="100"  alt=""></a>
                 <h6 class="  text-white  ">日本留学安心情報サイト「アプライズ」は、アジアの将来を担う人材の創出・育成を通じて産業発展に貢献します。</h6>
                 <button class="btn-danger" style="margin-left:20%"><a href="./logout.php">Logout</a></button>
             </form>
@@ -44,7 +44,7 @@
             <!-- <button  class="btn btn-secondary" id="news" ><a href="./news.php"> News</a></button> -->
            
             <div class="dropdown col-1"  class="btn btn-secondary" id="news" >
-                <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" style="background-color:#6c757d;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     News
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
